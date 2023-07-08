@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "727703555521",
+    "project_id": "sistema-de-inventario-f8fbb",
+    "storage_bucket": "sistema-de-inventario-f8fbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727703555521:android:224a525647f352d74ab340",
+        "android_client_info": {
+          "package_name": "zegel.ipae.proyectofinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727703555521-adaue2alt0sqb0f0g1i56h6or6gj6mfo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLtryxBbkF1wIEHHUagc2Se7IyhtM-ATU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "727703555521-adaue2alt0sqb0f0g1i56h6or6gj6mfo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
