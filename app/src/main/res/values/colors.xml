@@ -2,6 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#F6F8E2</color>
+    <color name="grey">#878786</color>
+    <color name="red">#F46B61</color>
 
     <color name="black_light">#3C3D42</color>
     <color name="green_light">#9CCD62</color>
@@ -11,4 +13,5 @@
     <color name="green_dark">#365A08</color>
     <color name="green_dark2">#5D9D0B</color>
     <color name="green_dark3">#73EC38</color>
+    <color name="green_dark4">#85F150</color>
 </resources>
