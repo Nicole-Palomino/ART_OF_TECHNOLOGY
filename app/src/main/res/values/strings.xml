@@ -12,4 +12,18 @@
     <string name="str_reset">¿Olvidaste la contraseña?</string>
     <string name="str_or">Or</string>
     <string name="str_create">Crear cuenta</string>
+
+    <string name="title_menu_admin">Menú principal</string>
+    <string name="str_welcome">Bienvenido</string>
+    <string name="str_user">Trabajadores</string>
+    <string name="str_product">Productos</string>
+    <string name="str_client">Clientes</string>
+    <string name="str_sale">Ventas</string>
+    <string name="str_account">Cuenta</string>
+    <string name="str_session">Cerrar Sesión</string>
+
+    <string name="input_username">Nombre de usuario</string>
+    <string name="input_confirm">Confirmar contraseña</string>
+    <string name="btn_account">Registrar</string>
+    <string name="btn_session">¿Ya tienes una cuenta?</string>
 </resources>
