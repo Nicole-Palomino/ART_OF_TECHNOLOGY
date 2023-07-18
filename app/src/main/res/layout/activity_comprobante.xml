@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:circularflow_radiusInDP="100dp"
+    android:orientation="vertical"
+    tools:context=".view.comprobante.ComprobanteActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="315dp"
+        android:layout_height="59dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.915">
+
+        <TextView
+            android:id="@+id/txtCompras"
+            android:layout_width="187dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:text="@string/str_compras"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/icon_ir" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="315dp"
+        android:layout_height="59dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.811">
+
+        <TextView
+            android:id="@+id/txtPedido"
+            android:layout_width="187dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:text="@string/str_pedido"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/icon_ir" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="315dp"
+        android:layout_height="59dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.705">
+
+        <TextView
+            android:id="@+id/txtVenta"
+            android:layout_width="187dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:text="@string/str_venta"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/icon_ir" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="411dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!-- Primer contenedor -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/logo"
+                android:src="@drawable/icon_check" />
+
+            <TextView
+                android:layout_width="99dp"
+                android:layout_height="wrap_content"
+                android:text="@string/str_validar"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <!-- Segundo contenedor -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/logo"
+                android:src="@drawable/baseline_bar_chart_24" />
+
+            <TextView
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:text="@string/str_reporte"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <!-- Tercer contenedor -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/logo"
+                android:src="@drawable/baseline_list_alt_24" />
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:text="@string/str_lista_cpe"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="402dp"
+        android:layout_height="55dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.317">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_crear_comp"
+            android:textColor="#000000"
+            app:cornerRadius="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="315dp"
+        android:layout_height="59dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="315dp"
+            android:layout_height="59dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtFactura"
+                android:layout_width="187dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="@string/str_factura"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="5dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/logo"
+                android:src="@drawable/icon_ir" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="315dp"
+        android:layout_height="59dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.604">
+
+        <TextView
+            android:id="@+id/txtBoleta"
+            android:layout_width="187dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:text="@string/str_boleta"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/icon_ir" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

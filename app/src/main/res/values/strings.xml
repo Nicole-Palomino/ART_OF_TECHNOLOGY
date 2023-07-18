@@ -5,6 +5,7 @@
     <string name="facebook">facebook</string>
     <string name="gmail">gmail</string>
     <string name="regresar">Regresar</string>
+    <string name="str_buscar">Buscar …</string>
 
     <string name="title_login">Iniciar Sesión</string>
     <string name="input_email">Correo electrónico</string>
@@ -32,5 +33,18 @@
     <string name="input_g2">Femenino</string>
     <string name="input_g3">Otro</string>
 
-    <string name="title_menu_product">Gestión de productos</string>
+    <string name="str_compras">COMPRAS</string>
+    <string name="str_pedido">PEDIDO</string>
+    <string name="str_venta">NOTA DE VENTA</string>
+    <string name="str_boleta">BOLETA ELECTRÓNICA</string>
+    <string name="str_comprobante">GESTIÓN DE COMPROBANTE</string>
+    <string name="str_validar">Validar CPE</string>
+    <string name="str_reporte">REPORTE</string>
+    <string name="str_lista_cpe">Lista de CPE</string>
+    <string name="str_crear_comp">CREAR COMPROBANTE</string>
+    <string name="str_factura">FACTURA ELECTRÓNICA</string>
+
+    <string name="title_usuarios">GESTIÓN DE TRABAJORES</string>
+
+    <string name="title_product">GESTIÓN DE PRODUCTOS</string>
 </resources>

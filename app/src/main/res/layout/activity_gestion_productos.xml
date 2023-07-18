@@ -7,69 +7,17 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/header"
-        android:layout_width="wrap_content"
-        android:layout_height="68dp"
-        android:background="#9CCD62"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints,UselessParent"
-        tools:layout_editor_absoluteX="1dp">
-
-        <TextView
-            android:id="@+id/txtTitulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="-1dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginBottom="20dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="GESTIÓN DE PRODUCTOS"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageButton
-            android:id="@+id/btnRegresar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="336dp"
-            android:layout_marginBottom="8dp"
-            android:background="#9CCD62"
-            android:contentDescription="regresar"
-            app:srcCompat="@drawable/icon_back" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
         android:id="@+id/navegacion"
         android:layout_width="408dp"
         android:layout_height="68dp"
-        android:layout_marginBottom="560dp"
+        android:layout_marginBottom="496dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.685"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp">
 
         <ImageButton
             android:id="@+id/btnAgregar"
-            android:background="@drawable/customborder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -77,29 +25,50 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="326dp"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="6dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="11dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/customborder"
             android:contentDescription="agregar"
             app:srcCompat="@drawable/icon_add" />
 
-        <EditText
-            android:id="@+id/etBuscarUsuario"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtBuscarProduct"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="283dp"
-            android:layout_height="48dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="11dp"
-            android:layout_marginBottom="11dp"
-            android:background="@drawable/customborder"
-            android:ems="10"
-            android:fontFamily="sans-serif-light"
-            android:inputType="text"
-            android:text="Buscar producto"
-            android:textSize="16sp"
-            android:typeface="normal" />
+            android:elevation="10dp"
+            android:hint="@string/str_buscar"
+            android:textColorHint="@color/black_light"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="@color/green_light"
+            app:boxStrokeErrorColor="@color/red"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.273"
+            app:startIconDrawable="@drawable/icon_search"
+            app:startIconTint="@color/black_light">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/TextInputBuscarProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|textEmailAddress"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/green_light"
+                android:textColorHint="@color/grey"
+                android:textColorLink="@color/green_light" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </RelativeLayout>
 
