@@ -28,7 +28,7 @@
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="sans-serif-smallcaps"
-            android:text="GESTIÓN DE USUARIOS"
+            android:text="GESTIÓN DE PRODUCTOS"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -81,11 +81,10 @@
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="11dp"
             android:contentDescription="agregar"
-            app:srcCompat="@drawable/agregar_usuario" />
+            app:srcCompat="@drawable/icon_add" />
 
         <EditText
             android:id="@+id/etBuscarUsuario"
-            android:background="@drawable/customborder"
             android:layout_width="283dp"
             android:layout_height="48dp"
             android:layout_alignParentStart="true"
@@ -94,10 +93,11 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="11dp"
             android:layout_marginBottom="11dp"
+            android:background="@drawable/customborder"
             android:ems="10"
             android:fontFamily="sans-serif-light"
             android:inputType="text"
-            android:text="Buscar usuario"
+            android:text="Buscar producto"
             android:textSize="16sp"
             android:typeface="normal" />
 
