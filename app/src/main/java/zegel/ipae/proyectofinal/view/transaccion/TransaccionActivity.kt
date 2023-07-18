@@ -2,6 +2,7 @@ package zegel.ipae.proyectofinal.view.transaccion
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.ListView
 import zegel.ipae.proyectofinal.R
 
