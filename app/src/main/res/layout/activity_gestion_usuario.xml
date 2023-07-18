@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#E5DFCC"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:background="#9CCD62"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints,UselessParent"
+        tools:layout_editor_absoluteX="1dp">
+
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="20dp"
+            android:text="GESTIÓN DE USUARIOS"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageButton
+            android:id="@+id/btnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="336dp"
+            android:layout_marginBottom="8dp"
+            android:background="#9CCD62"
+            android:contentDescription="menu"
+            app:srcCompat="@drawable/menu" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/navegacion"
+        android:layout_width="408dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="560dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintVertical_bias="0.685"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
+
+        <ImageButton
+            android:id="@+id/btnAgregar"
+            android:background="@drawable/customborder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="326dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="11dp"
+            android:contentDescription="agregar"
+            app:srcCompat="@drawable/agregar_usuario" />
+
+        <EditText
+            android:id="@+id/etBuscarUsuario"
+            android:background="@drawable/customborder"
+            android:layout_width="283dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="11dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="text"
+            android:text="Buscar usuario"
+            android:textSize="16sp"
+            android:typeface="normal" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollUsuarios"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navegacion"
+        app:layout_constraintVertical_bias="0.385"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/listarUsuarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Contenido del ConstraintLayout -->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
