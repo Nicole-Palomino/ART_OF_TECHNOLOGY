@@ -1,26 +1,11 @@
 package zegel.ipae.proyectofinal.util
 
-object FireStoreCollection{
-    val NOTA = "nota"
-    val USUARIO = "usuario"
-}
-
-object FireDatabase{
-    val FECHA = "fecha"
-    val USUARIO_ID = "usuario_id"
-}
-
-object SharedPrefConstants{
-    val LOCAL_SHARED_PREF = "local_shared_pref"
-    val USUARIO_SESION = "usuario_sesion"
-}
-
-object FirebaseStorageConstants{
-    val ROOT_DIRECTORY = "app"
-    val NOTA_IMAGEN = "nota_imagen"
-}
-
-enum class HomeTabs(val index:Int, val key: String){
-    NOTAS(0, "notas"),
-    TAREAS(1, "tareas")
+object Constantes {
+    val DEFAULT_ROL_CLIENTE = "cliente"
+    val DEFAULT_ROL_TRABAJADOR = "trabajador"
+    const val SHARED_PREFS_NAME = "session_prefs"
+    const val KEY_IS_LOGGED_IN = "is_logged_in"
+    const val RC_GOOGLE_SIGN_IN = 123
+    const val KEY_USER_NAME = "userName"
+    const val KEY_USER_EMAIL = "userEmail"
 }

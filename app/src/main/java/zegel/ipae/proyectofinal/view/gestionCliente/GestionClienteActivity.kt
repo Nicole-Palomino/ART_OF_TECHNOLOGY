@@ -1,4 +1,4 @@
-package zegel.ipae.proyectofinal.view.gestionProductos
+package zegel.ipae.proyectofinal.view.gestionCliente
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,10 +7,11 @@ import android.view.MenuItem
 import zegel.ipae.proyectofinal.R
 import zegel.ipae.proyectofinal.view.menuAdmin.MenuAdminActivity
 
-class GestionProductosActivity : AppCompatActivity() {
+class GestionClienteActivity : AppCompatActivity(){
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gestion_productos)
+        setContentView(R.layout.activity_gestion_cliente)
 
         // aparezca el icono de regresar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

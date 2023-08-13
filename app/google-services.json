@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "727703555521",
+    "firebase_url": "https://sistema-de-inventario-f8fbb-default-rtdb.firebaseio.com",
     "project_id": "sistema-de-inventario-f8fbb",
     "storage_bucket": "sistema-de-inventario-f8fbb.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "727703555521-4lpiqp3c861ngma5qlbc78bvr2012rec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "zegel.ipae.proyectofinal",
+            "certificate_hash": "4c41d5ff9396dc34723521875cd95ec259292206"
+          }
+        },
         {
           "client_id": "727703555521-adaue2alt0sqb0f0g1i56h6or6gj6mfo.apps.googleusercontent.com",
           "client_type": 3

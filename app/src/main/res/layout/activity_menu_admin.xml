@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/str_welcome"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="Usuario Admitido"
+        android:text="@string/str_account"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

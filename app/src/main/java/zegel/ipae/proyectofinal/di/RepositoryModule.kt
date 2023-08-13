@@ -1,8 +1,11 @@
 package zegel.ipae.proyectofinal.di
 
 import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
 @Module
+@InstallIn(SingletonComponent::class)
 object RepositoryModule {
-    // puedes definir los proveedores de dependencias relacionados con los repositorios de tu aplicación utilizando anotaciones de Dagger
+
 }
