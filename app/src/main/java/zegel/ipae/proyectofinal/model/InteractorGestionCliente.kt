@@ -25,4 +25,30 @@ class InteractorGestionCliente @Inject constructor(
                 // Manejar error
             }
     }
+
+    override fun editarClientes(cliente: Cliente, callback: (Boolean) -> Unit) {
+        firestore.collection("clientes")
+            .document(cliente.uid)
+            .set(cliente)
+            .addOnSuccessListener {
+                callback(true)
+            }
+            .addOnFailureListener { exception ->
+                callback(false)
+                // Manejar error
+            }
+    }
+
+    override fun eliminarClientes(cliente: Cliente, callback: (Boolean) -> Unit) {
+        firestore.collection("clientes")
+            .document(cliente.uid)
+            .delete()
+            .addOnSuccessListener {
+                callback(true)
+            }
+            .addOnFailureListener { exception ->
+                callback(false)
+                // Manejar error
+            }
+    }
 }

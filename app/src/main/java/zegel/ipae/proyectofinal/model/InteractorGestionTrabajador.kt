@@ -25,4 +25,30 @@ class InteractorGestionTrabajador @Inject constructor(
                 // Manejar error
             }
     }
+
+    override fun editarTrabajadores(trabajador: Trabajador, callback: (Boolean) -> Unit) {
+        firestore.collection("trabajadores")
+            .document(trabajador.uid)
+            .set(trabajador)
+            .addOnSuccessListener {
+                callback(true)
+            }
+            .addOnFailureListener { exception ->
+                callback(false)
+                // Manejar error
+            }
+    }
+
+    override fun eliminarTrabajadores(trabajador: Trabajador, callback: (Boolean) -> Unit) {
+        firestore.collection("trabajadores")
+            .document(trabajador.uid)
+            .delete()
+            .addOnSuccessListener {
+                callback(true)
+            }
+            .addOnFailureListener { exception ->
+                callback(false)
+                // Manejar error
+            }
+    }
 }
