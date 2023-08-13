@@ -1,34 +1,26 @@
 package zegel.ipae.proyectofinal.view.menuAdmin
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import zegel.ipae.proyectofinal.R
-import zegel.ipae.proyectofinal.contract.ContratoPerfilCliente
-import zegel.ipae.proyectofinal.model.InteractorPerfilCliente
-import zegel.ipae.proyectofinal.presenter.PresenterPerfilCliente
-import zegel.ipae.proyectofinal.util.Constantes
-import zegel.ipae.proyectofinal.view.comprobante.ComprobanteActivity
 import zegel.ipae.proyectofinal.view.login.LoginActivity
+import zegel.ipae.proyectofinal.view.perfil.PerfilActivity
 
-class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoPerfilCliente.ViewPerfilCliente {
+class MenuAdminActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var presenter: PresenterPerfilCliente
     private lateinit var googleSignInClient: GoogleSignInClient
-    private lateinit var sharedPreferences: SharedPreferences
-    private lateinit var fullName: TextView
     private lateinit var button: CardView
-    private lateinit var button6: CardView
+    private lateinit var button2: CardView
+    private lateinit var button3: CardView
+    private lateinit var button4: CardView
+    private lateinit var button5: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Ocultar el Action Bar
@@ -37,20 +29,21 @@ class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoPer
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_admin)
 
-        presenter = PresenterPerfilCliente(this, InteractorPerfilCliente())
-        sharedPreferences = getSharedPreferences(Constantes.SHARED_PREFS_NAME, Context.MODE_PRIVATE)
         initViews()
     }
 
     private fun initViews() {
-        fullName = findViewById(R.id.fullName)
-        button = findViewById(R.id.cardSales)
-        button6 = findViewById(R.id.cardSession)
-        val uid = FirebaseAuth.getInstance().currentUser?.uid ?: ""
+        button = findViewById(R.id.cardUser)
+        button2 = findViewById(R.id.cardProduct)
+        button3 = findViewById(R.id.cardCliente)
+        button4 = findViewById(R.id.cardPerfil)
+        button5 = findViewById(R.id.cardSession)
 
-        presenter.cargarDatosUsuario(uid)
         button.setOnClickListener(this)
-        button6.setOnClickListener(this)
+        button2.setOnClickListener(this)
+        button3.setOnClickListener(this)
+        button4.setOnClickListener(this)
+        button5.setOnClickListener(this)
 
         // Inicializar googleSignInClient
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -59,13 +52,22 @@ class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoPer
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
+
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.cardSales -> {
-                startActivity(Intent(this@MenuAdminActivity, ComprobanteActivity::class.java))
-                finish()
+            R.id.cardUser -> {
+                redirectToTrabajadores()
+            }
+            R.id.cardProduct -> {
+                redirectToProduct()
+            }
+            R.id.cardCliente -> {
+                redirectToClient()
+            }
+            R.id.cardPerfil -> {
+                redirectToPerfil()
             }
             R.id.cardSession -> {
                 signOut()
@@ -79,10 +81,6 @@ class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoPer
         // cerrar sesion con google
         googleSignInClient.signOut()
 
-        val editor = sharedPreferences.edit()
-        editor.putBoolean(Constantes.KEY_IS_LOGGED_IN, true)
-        editor.apply()
-
         redirectToLogin()
     }
 
@@ -93,11 +91,19 @@ class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoPer
         finish()
     }
 
-    override fun mostrarDatosUsuario(username: String, correo: String, rol: String) {
-        fullName.text = username
+    private fun redirectToTrabajadores() {
+        startActivity(Intent(this, PerfilActivity::class.java))
     }
 
-    override fun mostrarError(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    private fun redirectToProduct() {
+        startActivity(Intent(this, MenuAdminActivity::class.java))
+    }
+
+    private fun redirectToClient() {
+        startActivity(Intent(this, PerfilActivity::class.java))
+    }
+
+    private fun redirectToPerfil() {
+        startActivity(Intent(this, PerfilActivity::class.java))
     }
 }

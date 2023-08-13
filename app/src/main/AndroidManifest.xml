@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <application
@@ -17,21 +17,23 @@
         android:theme="@style/Theme.ProyectoFinal"
         tools:targetApi="31">
         <activity
-            android:name=".view.comprobante.ComprobanteActivity"
+            android:name=".view.menuCliente.MenuClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.perfil.PerfilActivity"
             android:exported="false"
-            android:label="@string/str_comprobante"/>
+            android:label="@string/title_perfil" />
+        <activity
+            android:name=".view.resetPassword.ForgotPasswordActivity"
+            android:exported="false" />
         <activity
             android:name=".view.gestionProductos.GestionProductosActivity"
             android:exported="false"
-            android:label="@string/title_product"/>
-        <activity
-            android:name=".view.transaccion.TransaccionActivity"
-            android:exported="false"
-            android:label="@string/str_reporte"/>
+            android:label="@string/title_product" />
         <activity
             android:name=".view.gestionUsuario.GestionUsuarioActivity"
             android:exported="false"
-            android:label="@string/title_usuarios"/>
+            android:label="@string/title_usuarios" />
         <activity
             android:name=".view.menuAdmin.MenuAdminActivity"
             android:exported="false" />

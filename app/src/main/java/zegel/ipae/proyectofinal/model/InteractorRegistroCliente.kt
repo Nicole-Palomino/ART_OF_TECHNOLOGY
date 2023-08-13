@@ -8,7 +8,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import zegel.ipae.proyectofinal.contract.ContratoRegistroCliente
 import zegel.ipae.proyectofinal.data.Cliente
 import zegel.ipae.proyectofinal.util.Constantes
-import java.security.MessageDigest
 import javax.inject.Inject
 
 class InteractorRegistroCliente @Inject constructor(
@@ -21,10 +20,9 @@ class InteractorRegistroCliente @Inject constructor(
         username: String
     ) {
         val rolCliente = Constantes.DEFAULT_ROL_CLIENTE
-        val hashedPassword = hashSHA256(contrasena)
 
         FirebaseAuth.getInstance()
-            .createUserWithEmailAndPassword(correo, hashedPassword)
+            .createUserWithEmailAndPassword(correo, contrasena)
             .addOnCompleteListener { task: Task<AuthResult> ->
                 if (task.isSuccessful) {
                     val firebaseUser = task.result?.user!!
@@ -32,12 +30,11 @@ class InteractorRegistroCliente @Inject constructor(
                         uid = firebaseUser.uid,
                         username = username,
                         correo = correo,
-                        contrasena = hashedPassword,
                         rol = rolCliente
                     )
 
                     val db = FirebaseFirestore.getInstance()
-                    val clientesCollection = db.collection("clientes")
+                    val clientesCollection = db.collection("usuarios")
 
                     clientesCollection.document(firebaseUser.uid)
                         .set(cliente)
@@ -54,19 +51,5 @@ class InteractorRegistroCliente @Inject constructor(
                 }
             }
 
-    }
-
-    private fun hashSHA256(input: String): String {
-        val messagedigest = MessageDigest.getInstance("SHA-256")
-        val byteBuffer = messagedigest.digest(input.toByteArray())
-        val hexString = StringBuilder()
-
-        for (byte in byteBuffer) {
-            val hex = Integer.toHexString(0xff and byte.toInt())
-            if (hex.length == 1) hexString.append('0')
-            hexString.append(hex)
-        }
-
-        return hexString.toString()
     }
 }

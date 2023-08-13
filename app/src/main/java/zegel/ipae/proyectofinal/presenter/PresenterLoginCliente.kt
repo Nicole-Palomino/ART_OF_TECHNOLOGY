@@ -1,6 +1,7 @@
 package zegel.ipae.proyectofinal.presenter
 
 import android.app.Activity
+import android.content.Context
 import zegel.ipae.proyectofinal.contract.ContratoLoginCliente
 import javax.inject.Inject
 
@@ -11,8 +12,10 @@ class PresenterLoginCliente @Inject constructor(
     override fun login(
         activity: Activity,
         email: String,
-        pass: String) {
-        interactor.performLogin(activity,email,pass)
+        pass: String,
+        context: Context
+    ) {
+        interactor.performLogin(activity,email,pass,context)
     }
 
     override fun onSuccess(message: String) {

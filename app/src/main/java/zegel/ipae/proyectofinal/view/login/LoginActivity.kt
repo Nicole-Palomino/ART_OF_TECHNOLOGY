@@ -1,6 +1,7 @@
 package zegel.ipae.proyectofinal.view.login
 
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +21,9 @@ import zegel.ipae.proyectofinal.model.InteractorLoginCliente
 import zegel.ipae.proyectofinal.presenter.PresenterLoginCliente
 import zegel.ipae.proyectofinal.util.Constantes
 import zegel.ipae.proyectofinal.util.validation.Validaciones
+import zegel.ipae.proyectofinal.view.resetPassword.ForgotPasswordActivity
 import zegel.ipae.proyectofinal.view.menuAdmin.MenuAdminActivity
+import zegel.ipae.proyectofinal.view.menuCliente.MenuClienteActivity
 import zegel.ipae.proyectofinal.view.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener, ContratoLoginCliente.ViewLoginCliente, ContratoLoginCliente.CompleteLoginCliente {
@@ -34,7 +37,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContratoLoginCl
     private lateinit var btnLogin: Button
     private lateinit var registrar: TextView
     private lateinit var resetPass: TextView
-    private lateinit var btnGmail: ImageButton
+    private lateinit var btnGmail: Button
     private lateinit var dialog: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +47,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContratoLoginCl
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        sharedPreferences = getSharedPreferences(Constantes.SHARED_PREFS_NAME, Context.MODE_PRIVATE)
         initViews()
     }
 
@@ -91,7 +95,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContratoLoginCl
                 }
 
                 dialog.show()
-                presenter.login(this, emailUser,passUser)
+                presenter.login(this, emailUser,passUser, this)
             }
             R.id.txtRegister -> {
                 redirectToRegister()
@@ -100,18 +104,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContratoLoginCl
                 signInWithGoogle()
             }
             R.id.txtReset -> {
-                Toast.makeText(this, "En desarrollo" , Toast.LENGTH_LONG).show()
+                redirectToForgot()
             }
         }
     }
 
     override fun onSuccess(message: String) {
         dialog.dismiss()
-        if (message.contains("cliente")) {
-            redirectToRegister()
-        } else if (message.contains("trabajador")) {
-            redirectToMenuAdmin()
-        }
+        Toast.makeText(this, message , Toast.LENGTH_LONG).show()
     }
 
     override fun onFailure(message: String) {
@@ -128,12 +128,22 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContratoLoginCl
     }
 
     private fun redirectToMenuAdmin() {
-        startActivity(Intent(this@LoginActivity, MenuAdminActivity::class.java))
+        startActivity(Intent(this, MenuAdminActivity::class.java))
+        finish()
+    }
+
+    private fun redirectToMenuCliente() {
+        startActivity(Intent(this, MenuClienteActivity::class.java))
         finish()
     }
 
     private fun redirectToRegister() {
-        startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+        startActivity(Intent(this, RegisterActivity::class.java))
+        finish()
+    }
+
+    private fun redirectToForgot() {
+        startActivity(Intent(this, ForgotPasswordActivity::class.java))
         finish()
     }
 
@@ -166,16 +176,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContratoLoginCl
                 dialog.dismiss()
 
                 if (task.isSuccessful) {
-                    val user = auth.currentUser
-                    val userName = user?.displayName ?: ""
-                    val userEmail = user?.email ?: ""
-
-                    val editor = sharedPreferences.edit()
-                    editor.putString(Constantes.KEY_USER_NAME, userName)
-                    editor.putString(Constantes.KEY_USER_EMAIL, userEmail)
-                    editor.apply()
-
-                    redirectToMenuAdmin()
+                    redirectToMenuCliente()
                 } else {
                     Toast.makeText(this, "Error al iniciar sesión con google", Toast.LENGTH_LONG).show()
                 }

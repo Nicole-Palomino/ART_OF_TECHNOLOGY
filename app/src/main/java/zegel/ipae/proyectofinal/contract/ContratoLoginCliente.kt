@@ -1,6 +1,7 @@
 package zegel.ipae.proyectofinal.contract
 
 import android.app.Activity
+import android.content.Context
 
 interface ContratoLoginCliente {
     interface ViewLoginCliente {
@@ -12,7 +13,8 @@ interface ContratoLoginCliente {
         fun login(
             activity: Activity,
             email: String,
-            pass: String
+            pass: String,
+            context: Context
         )
     }
 
@@ -20,7 +22,8 @@ interface ContratoLoginCliente {
         fun performLogin(   
             activity: Activity,
             email: String,
-            pass: String
+            pass: String,
+            context: Context
         )
     }
 
