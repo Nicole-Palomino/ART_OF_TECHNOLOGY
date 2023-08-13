@@ -9,12 +9,11 @@
     tools:context=".view.menuCliente.MenuClienteActivity">
 
     <TextView
-        android:id="@+id/title"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/title_menu_admin"
+        android:contentDescription="@string/title_menu_client"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/title_menu_admin"
+        android:text="@string/title_menu_client"
         android:textColor="@color/black"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,9 +26,9 @@
     <TextView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/str_welcome"
+        android:contentDescription="@string/title_menu_client2"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/str_welcome"
+        android:text="@string/title_menu_client2"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,6 +37,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.113" />
+
+    <TextView
+        android:id="@+id/fullNameWork"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/str_welcome"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.153" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/logo2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/str_welcome"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/str_opcion"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.217" />
 
     <GridLayout
         android:id="@+id/idGrid2"
@@ -51,7 +93,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47">
+        app:layout_constraintVertical_bias="0.55">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardEscanear"

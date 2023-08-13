@@ -127,11 +127,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContratoLoginCl
         Toast.makeText(this, message , Toast.LENGTH_LONG).show()
     }
 
-    private fun redirectToMenuAdmin() {
-        startActivity(Intent(this, MenuAdminActivity::class.java))
-        finish()
-    }
-
     private fun redirectToMenuCliente() {
         startActivity(Intent(this, MenuClienteActivity::class.java))
         finish()

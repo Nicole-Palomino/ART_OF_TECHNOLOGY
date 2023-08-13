@@ -15,4 +15,17 @@ interface ContratoGetData {
     interface Interactor {
         fun getUserData(callback: (Cliente?, String?, String?, String?) -> Unit)
     }
+
+    interface ViewTrabajador {
+        fun showUserData(userData: Cliente)
+        fun showErrorMessage(message: String)
+    }
+
+    interface PresenterTrabajador {
+        fun loadData()
+    }
+
+    interface InteractorTrabajador {
+        fun getUserData(callback: (Cliente?, String?, String?, String?) -> Unit)
+    }
 }

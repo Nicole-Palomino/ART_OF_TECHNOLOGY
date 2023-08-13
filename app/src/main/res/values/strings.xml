@@ -45,6 +45,9 @@
     <string name="str_correo">Correo</string>
     <string name="title_forgot2">Restablecer Contraseña</string>
 
+    <string name="title_menu_client">Bienvenido a</string>
+    <string name="title_menu_client2">ART OF TECHNOLOGY</string>
+    <string name="str_opcion">Elija una opción</string>
     <string name="str_escanear">Escanear</string>
     <string name="str_products">Ver productos</string>
 </resources>

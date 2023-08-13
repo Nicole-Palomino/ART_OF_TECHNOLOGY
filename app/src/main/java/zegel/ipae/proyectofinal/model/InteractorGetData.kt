@@ -27,7 +27,12 @@ class InteractorGetData @Inject constructor(): ContratoGetData.Interactor {
                     .addOnSuccessListener { document ->
                         if (document.exists()) {
                             val userData = document.toObject(Cliente::class.java)
-                            callback(userData, null, null, null)
+                            // Verificar el rol del usuario
+                            if (userData?.rol == "cliente") {
+                                callback(userData, null, null, null)
+                            } else {
+                                callback(null, null, null, "No tienes el rol de cliente.")
+                            }
                         } else {
                             callback(null, null, null, "No se encontraron datos para el usuario.")
                         }
