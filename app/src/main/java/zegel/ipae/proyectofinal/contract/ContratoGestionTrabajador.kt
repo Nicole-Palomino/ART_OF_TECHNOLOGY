@@ -22,4 +22,8 @@ interface ContratoGestionTrabajador {
         fun editarTrabajadores(trabajador: Trabajador, callback: (Boolean) -> Unit)
         fun eliminarTrabajadores(trabajador: Trabajador, callback: (Boolean) -> Unit)
     }
+
+    interface ViewEditTrabajador {
+        fun showEditTrabajador()
+    }
 }
