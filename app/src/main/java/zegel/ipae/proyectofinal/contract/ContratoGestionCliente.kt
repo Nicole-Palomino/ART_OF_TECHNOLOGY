@@ -23,4 +23,8 @@ interface ContratoGestionCliente {
         fun editarClientes(cliente: Cliente, callback: (Boolean) -> Unit)
         fun eliminarClientes(cliente: Cliente, callback: (Boolean) -> Unit)
     }
+
+    interface ViewEditClient{
+        fun showEditClient()
+    }
 }
