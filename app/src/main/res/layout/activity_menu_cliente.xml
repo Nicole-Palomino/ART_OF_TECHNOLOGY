@@ -6,15 +6,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/background2"
     android:orientation="vertical"
-    tools:context=".view.menuAdmin.MenuAdminActivity">
+    tools:context=".view.menuCliente.MenuClienteActivity">
 
     <TextView
-        android:id="@+id/title"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/title_menu_admin"
+        android:contentDescription="@string/title_menu_client"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/title_menu_admin"
+        android:text="@string/title_menu_client"
         android:textColor="@color/black"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,9 +26,9 @@
     <TextView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/str_welcome"
+        android:contentDescription="@string/title_menu_client2"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/str_welcome"
+        android:text="@string/title_menu_client2"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +39,7 @@
         app:layout_constraintVertical_bias="0.113" />
 
     <TextView
-        android:id="@+id/fullName"
+        android:id="@+id/fullNameWork"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/str_welcome"
@@ -55,22 +54,49 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.153" />
 
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/logo2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/str_welcome"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/str_opcion"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.217" />
+
     <GridLayout
-        android:id="@+id/idGrid"
+        android:id="@+id/idGrid2"
         android:layout_width="match_parent"
-        android:layout_height="560dp"
+        android:layout_height="400dp"
         android:columnCount="2"
         android:padding="15dp"
-        android:rowCount="3"
+        android:rowCount="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83">
+        app:layout_constraintVertical_bias="0.55">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardUser"
+            android:id="@+id/cardEscanear"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -94,13 +120,13 @@
                     android:layout_height="90dp"
                     android:layout_gravity="center_horizontal"
                     android:contentDescription="@string/logo"
-                    android:src="@drawable/icon_user" />
+                    android:src="@drawable/icon_codigo" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
-                    android:text="@string/str_user"
+                    android:text="@string/str_escanear"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="22sp"/>
@@ -108,7 +134,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardProduct"
+            android:id="@+id/cardListado"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -116,7 +142,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="10dp"
-            android:elevation="10dp"
+            android:elevation="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp">
@@ -138,7 +164,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
-                    android:text="@string/str_product"
+                    android:text="@string/str_products"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="22sp"/>
@@ -146,45 +172,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardCliente"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="10dp"
-            android:elevation="10dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_gravity="center_horizontal"
-                    android:contentDescription="@string/logo"
-                    android:src="@drawable/icon_client" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/str_client"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="22sp"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardPerfil"
+            android:id="@+id/cardCuenta"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -222,7 +210,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardSession"
+            android:id="@+id/cardCerrar"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"

@@ -92,8 +92,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener, ContratoRegi
                 presenter.registerWithEmailAndPassword(this, userEmail,userPass,userName)
             }
             R.id.txtSession -> {
-                startActivity(Intent(this, LoginActivity::class.java))
-                finish()
+                navigateToLogin()
             }
         }
     }

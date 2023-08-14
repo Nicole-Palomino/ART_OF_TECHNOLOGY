@@ -26,17 +26,22 @@
             android:name=".view.gestionTrabajador.GestionTrabajadorActivity"
             android:exported="false" />
         <activity
-            android:name=".view.comprobante.ComprobanteActivity"
+            android:name=".view.perfil.PerfilTrabajadorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.menuCliente.MenuClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.perfil.PerfilActivity"
             android:exported="false"
-            android:label="@string/str_comprobante" />
+            android:label="@string/title_perfil" />
+        <activity
+            android:name=".view.resetPassword.ForgotPasswordActivity"
+            android:exported="false" />
         <activity
             android:name=".view.gestionProductos.GestionProductosActivity"
             android:exported="false"
             android:label="@string/title_product" />
-        <activity
-            android:name=".view.transaccion.TransaccionActivity"
-            android:exported="false"
-            android:label="@string/str_reporte" />
         <activity
             android:name=".view.gestionCliente.GestionClienteActivity"
             android:exported="true"

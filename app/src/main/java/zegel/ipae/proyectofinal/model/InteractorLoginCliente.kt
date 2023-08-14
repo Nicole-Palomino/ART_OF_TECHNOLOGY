@@ -1,12 +1,14 @@
 package zegel.ipae.proyectofinal.model
 
 import android.app.Activity
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
+import android.content.Context
+import android.content.Intent
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import zegel.ipae.proyectofinal.contract.ContratoLoginCliente
-import java.security.MessageDigest
+import zegel.ipae.proyectofinal.view.menuAdmin.MenuAdminActivity
+import zegel.ipae.proyectofinal.view.menuCliente.MenuClienteActivity
+import zegel.ipae.proyectofinal.view.register.RegisterActivity
 import javax.inject.Inject
 
 class InteractorLoginCliente @Inject constructor(private val complete: ContratoLoginCliente.CompleteLoginCliente): ContratoLoginCliente.InteractorLoginCliente {
@@ -14,55 +16,65 @@ class InteractorLoginCliente @Inject constructor(private val complete: ContratoL
     override fun performLogin(
         activity: Activity,
         email: String,
-        pass: String) {
+        pass: String,
+        context: Context
+        ) {
         val auth = FirebaseAuth.getInstance()
-        val hashedPassword = hashSHA256(pass)
 
-        auth.signInWithEmailAndPassword(email, hashedPassword)
-            .addOnCompleteListener(activity) { task: Task<AuthResult> ->
+        auth.signInWithEmailAndPassword(email, pass)
+            .addOnCompleteListener(activity) { task ->
                 if (task.isSuccessful) {
                     val uid = auth.currentUser?.uid
-                    uid?.let { fetchUserRoleAndRedirect(it) }
+                    if (uid != null) {
+                        fetchUserRoleAndRedirect(uid, context)
+                    } else {
+                        complete.onFailure("Error al obtener UID del usuario")
+                    }
                 } else {
-                    complete.onFailure("Credenciales incorrectas")
-                }
-            }
-    }
-
-    private fun fetchUserRoleAndRedirect(it: String) {
-        val db = FirebaseFirestore.getInstance()
-        val userDocRef = db.collection("clientes").document(it)
-
-        userDocRef.get()
-            .addOnSuccessListener { documentSnapshot ->
-                when (documentSnapshot.getString("rol")) {
-                    "cliente" -> {
-                        complete.onSuccess("Inicio de sesión exitoso como cliente")
-                    }
-                    "trabajador" -> {
-                        complete.onSuccess("Inicio de sesión exitoso como trabajador")
-                    }
-                    else -> {
-                        complete.onFailure("Rol no reconocido")
-                    }
+                    complete.onFailure("Credenciales incorrectas o usuario no encontrado")
                 }
             }
             .addOnFailureListener { exception ->
-                complete.onFailure("Error al obtener el rol: $exception")
+                complete.onFailure("Error al autenticar usuario: $exception")
             }
     }
 
-    private fun hashSHA256(input: String): String {
-        val messagedigest = MessageDigest.getInstance("SHA-256")
-        val byteBuffer = messagedigest.digest(input.toByteArray())
-        val hexString = StringBuilder()
+    private fun fetchUserRoleAndRedirect(it: String, context: Context) {
+        val db = FirebaseFirestore.getInstance()
+        val usuariosCollection = db.collection("usuarios")
 
-        for (byte in byteBuffer) {
-            val hex = Integer.toHexString(0xff and byte.toInt())
-            if (hex.length == 1) hexString.append('0')
-            hexString.append(hex)
+        usuariosCollection.document(it)
+            .get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val rol = document.getString("rol")
+                    if (rol != null) {
+                        redirectBasedOnUserRole(rol, context)
+                    } else {
+                        complete.onFailure("Rol no encontrado para el usuario")
+                    }
+                } else {
+                    complete.onFailure("Usuario no encontrado en Firestore")
+                }
+            }
+            .addOnFailureListener { exception ->
+                complete.onFailure("Error al obtener información del usuario: $exception")
+            }
+    }
+
+    private fun redirectBasedOnUserRole(rol: String, context: Context) {
+        when (rol) {
+            "cliente" -> {
+                complete.onSuccess("Inicio de sesión exitosa")
+                context.startActivity(Intent(context, MenuClienteActivity::class.java))
+            }
+            "trabajador" -> {
+                complete.onSuccess("Inicio de sesión exitosa")
+                context.startActivity(Intent(context, MenuAdminActivity::class.java))
+            }
+            else -> {
+                complete.onFailure("Rol no reconocido")
+            }
         }
-
-        return hexString.toString()
     }
 }

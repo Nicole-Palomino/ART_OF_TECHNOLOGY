@@ -1,4 +1,4 @@
-package zegel.ipae.proyectofinal.view.menuAdmin
+package zegel.ipae.proyectofinal.view.menuCliente
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -18,61 +18,64 @@ import zegel.ipae.proyectofinal.model.InteractorGetData
 import zegel.ipae.proyectofinal.presenter.PresenterGetData
 import zegel.ipae.proyectofinal.view.login.LoginActivity
 import zegel.ipae.proyectofinal.view.perfil.PerfilActivity
-import zegel.ipae.proyectofinal.view.perfil.PerfilTrabajadorActivity
 
-class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoGetData.View {
+class MenuClienteActivity : AppCompatActivity(), View.OnClickListener, ContratoGetData.View {
 
+    private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var presenter: PresenterGetData
     private lateinit var textView: TextView
     private lateinit var button: CardView
     private lateinit var button2: CardView
     private lateinit var button3: CardView
     private lateinit var button4: CardView
-    private lateinit var button5: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Ocultar el Action Bar
         supportActionBar?.hide()
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu_admin)
+        setContentView(R.layout.activity_menu_cliente)
 
         initViews()
     }
 
     private fun initViews() {
-        textView = findViewById(R.id.fullName)
-        button = findViewById(R.id.cardUser)
-        button2 = findViewById(R.id.cardProduct)
-        button3 = findViewById(R.id.cardCliente)
-        button4 = findViewById(R.id.cardPerfil)
-        button5 = findViewById(R.id.cardSession)
+        textView = findViewById(R.id.fullNameWork)
+        button = findViewById(R.id.cardEscanear)
+        button2 = findViewById(R.id.cardListado)
+        button3 = findViewById(R.id.cardCuenta)
+        button4 = findViewById(R.id.cardCerrar)
 
         button.setOnClickListener(this)
         button2.setOnClickListener(this)
         button3.setOnClickListener(this)
         button4.setOnClickListener(this)
-        button5.setOnClickListener(this)
 
         presenter = PresenterGetData(this, InteractorGetData())
         presenter.loadData()
+
+        // Inicializar googleSignInClient
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
+
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.cardUser -> {
-                redirectToTrabajadores()
-            }
-            R.id.cardProduct -> {
-                redirectToProduct()
-            }
-            R.id.cardCliente -> {
-                redirectToClient()
-            }
-            R.id.cardPerfil -> {
+            R.id.cardEscanear -> {
                 redirectToPerfil()
             }
-            R.id.cardSession -> {
+            R.id.cardListado -> {
+                redirectToPerfil()
+            }
+            R.id.cardCuenta -> {
+                redirectToPerfil()
+            }
+            R.id.cardCerrar -> {
                 signOut()
             }
         }
@@ -81,6 +84,8 @@ class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoGet
     private fun signOut() {
         // cerrar sesion con firebase authentication
         FirebaseAuth.getInstance().signOut()
+        // cerrar sesion con google
+        googleSignInClient.signOut()
 
         redirectToLogin()
     }
@@ -92,28 +97,15 @@ class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoGet
         finish()
     }
 
-    private fun redirectToTrabajadores() {
-        startActivity(Intent(this, PerfilActivity::class.java))
-    }
-
-    private fun redirectToProduct() {
-        startActivity(Intent(this, MenuAdminActivity::class.java))
-    }
-
-    private fun redirectToClient() {
-        startActivity(Intent(this, PerfilActivity::class.java))
-    }
-
-    private fun redirectToPerfil() {
-        startActivity(Intent(this, PerfilTrabajadorActivity::class.java))
-    }
-
-    // mostrar datos
     override fun showUserData(userData: Cliente) {
         textView.text = userData.username
     }
 
     override fun showErrorMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    }
+
+    private fun redirectToPerfil() {
+        startActivity(Intent(this, PerfilActivity::class.java))
     }
 }
