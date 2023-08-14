@@ -5,13 +5,13 @@ import zegel.ipae.proyectofinal.contract.ContratoGestionCliente
 import zegel.ipae.proyectofinal.data.Cliente
 import javax.inject.Inject
 
-class InteractorGestionCliente @Inject constructor(
-    private val firestore: FirebaseFirestore): ContratoGestionCliente.Interactor{
 
+class InteractorGestionCliente @Inject constructor(): ContratoGestionCliente.Interactor{
+    val firestore = FirebaseFirestore.getInstance()
     override fun obtenerClientes(callback: (List<Cliente>) -> Unit) {
         val clientes = mutableListOf<Cliente>()
 
-        firestore.collection("clientes")
+        firestore.collection("usuarios")
             .whereEqualTo("rol", "cliente")
             .get()
             .addOnSuccessListener { result ->
@@ -27,7 +27,7 @@ class InteractorGestionCliente @Inject constructor(
     }
 
     override fun editarClientes(cliente: Cliente, callback: (Boolean) -> Unit) {
-        firestore.collection("clientes")
+        firestore.collection("usuarios")
             .document(cliente.uid)
             .set(cliente)
             .addOnSuccessListener {
@@ -40,7 +40,7 @@ class InteractorGestionCliente @Inject constructor(
     }
 
     override fun eliminarClientes(cliente: Cliente, callback: (Boolean) -> Unit) {
-        firestore.collection("clientes")
+        firestore.collection("usuarios")
             .document(cliente.uid)
             .delete()
             .addOnSuccessListener {

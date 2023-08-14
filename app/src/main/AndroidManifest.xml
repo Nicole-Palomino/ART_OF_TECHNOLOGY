@@ -33,8 +33,14 @@
             android:label="@string/str_reporte" />
         <activity
             android:name=".view.gestionCliente.GestionClienteActivity"
-            android:exported="false"
-            android:label="@string/title_usuarios" />
+            android:exported="true"
+            android:label="@string/title_usuarios" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.menuAdmin.MenuAdminActivity"
             android:exported="false" />
@@ -46,12 +52,8 @@
             android:exported="false" />
         <activity
             android:name=".view.home.MainActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

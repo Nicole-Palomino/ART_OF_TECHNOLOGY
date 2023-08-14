@@ -11,7 +11,7 @@ class InteractorGestionTrabajador @Inject constructor(
     override fun obtenerTrabajadores(callback: (List<Trabajador>) -> Unit) {
         val trabajadores = mutableListOf<Trabajador>()
 
-        firestore.collection("trabajadores")
+        firestore.collection("usuarios")
             .whereEqualTo("rol", "trabajador")
             .get()
             .addOnSuccessListener { result ->
@@ -27,7 +27,7 @@ class InteractorGestionTrabajador @Inject constructor(
     }
 
     override fun editarTrabajadores(trabajador: Trabajador, callback: (Boolean) -> Unit) {
-        firestore.collection("trabajadores")
+        firestore.collection("usuarios")
             .document(trabajador.uid)
             .set(trabajador)
             .addOnSuccessListener {
@@ -40,7 +40,7 @@ class InteractorGestionTrabajador @Inject constructor(
     }
 
     override fun eliminarTrabajadores(trabajador: Trabajador, callback: (Boolean) -> Unit) {
-        firestore.collection("trabajadores")
+        firestore.collection("usuarios")
             .document(trabajador.uid)
             .delete()
             .addOnSuccessListener {
