@@ -7,17 +7,12 @@ import zegel.ipae.proyectofinal.contract.ContratoGestionTrabajador
 import zegel.ipae.proyectofinal.data.Trabajador
 import javax.inject.Inject
 
-<<<<<<< HEAD
 class InteractorGestionTrabajador @Inject constructor(
     private val context: Context
 ): ContratoGestionTrabajador.InteractorList{
 
     private val firestore = FirebaseFirestore.getInstance()
 
-=======
-class InteractorGestionTrabajador @Inject constructor(): ContratoGestionTrabajador.Interactor{
-    val firestore = FirebaseFirestore.getInstance()
->>>>>>> 40a33a6bb10fc7ff4d5c8f6fc7763885ba35a053
     override fun obtenerTrabajadores(callback: (List<Trabajador>) -> Unit) {
         val trabajadores = mutableListOf<Trabajador>()
 

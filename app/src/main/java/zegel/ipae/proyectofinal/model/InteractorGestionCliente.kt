@@ -1,7 +1,5 @@
 package zegel.ipae.proyectofinal.model
 
-import android.util.Log
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import zegel.ipae.proyectofinal.contract.ContratoGestionCliente
 import zegel.ipae.proyectofinal.data.Cliente

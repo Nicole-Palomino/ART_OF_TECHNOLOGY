@@ -8,6 +8,12 @@
     <string name="gmail">gmail</string>
     <string name="regresar">Regresar</string>
     <string name="str_buscar">Buscar …</string>
+    <string name="str_add">REGISTRAR TRABAJADOR</string>
+    <string name="str_edit_work">MODIFICAR TRABAJADOR</string>
+
+    <string name="str_add_client">REGISTRAR CLIENTE</string>
+    <string name="str_edit_client">REGISTRAR CLIENTE</string>
+    <string name="str_clientess">GESTION DE CLIENTES</string>
     <string name="str_google">Inicia sesión con google</string>
 
     <string name="title_login">Iniciar Sesión</string>

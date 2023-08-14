@@ -17,27 +17,24 @@
         android:theme="@style/Theme.ProyectoFinal"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
             android:name=".view.gestionTrabajador.AddTrabjadorActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/str_add"/>
         <activity
             android:name=".view.gestionTrabajador.EditarTrabajadorActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/str_edit_work"/>
         <activity
-=======
             android:name=".view.gestionProductos.EditarProductoActivity"
             android:exported="false" />
         <activity
-            android:name=".view.gestionTrabajador.EditarTrabajadorActivity"
-            android:exported="false" />
-        <activity
->>>>>>> 40a33a6bb10fc7ff4d5c8f6fc7763885ba35a053
             android:name=".view.gestionTrabajador.GestionTrabajadorActivity"
             android:exported="false"
             android:label="@string/title_usuarios" />
         <activity
             android:name=".view.perfil.PerfilTrabajadorActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/title_perfil"/>
         <activity
             android:name=".view.menuCliente.MenuClienteActivity"
             android:exported="false" />
@@ -54,12 +51,8 @@
             android:label="@string/title_product" />
         <activity
             android:name=".view.gestionCliente.GestionClienteActivity"
-<<<<<<< HEAD
             android:exported="false"
-=======
-            android:exported="true"
->>>>>>> 40a33a6bb10fc7ff4d5c8f6fc7763885ba35a053
-            android:label="@string/title_usuarios" />
+            android:label="@string/str_clientess" />
         <activity
             android:name=".view.menuAdmin.MenuAdminActivity"
             android:exported="false" />

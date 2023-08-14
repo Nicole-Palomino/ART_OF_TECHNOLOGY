@@ -7,7 +7,6 @@ import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.textfield.TextInputEditText
 import zegel.ipae.proyectofinal.R
 import zegel.ipae.proyectofinal.contract.ContratoGestionTrabajador
 import zegel.ipae.proyectofinal.data.Trabajador
@@ -36,7 +35,7 @@ class GestionTrabajadorActivity : AppCompatActivity(), ContratoGestionTrabajador
             presenter.editarTrabajador(trabajador)
         }
 
-        presenter = PresenterGestionTrabajador(this, InteractorGestionTrabajador())
+        presenter = PresenterGestionTrabajador(this, InteractorGestionTrabajador(applicationContext), applicationContext)
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerViewTrabajador)
         recyclerView.layoutManager = LinearLayoutManager(this)

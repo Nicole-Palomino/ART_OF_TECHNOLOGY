@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import zegel.ipae.proyectofinal.R
-import zegel.ipae.proyectofinal.contract.ContratoGestionTrabajador
 import zegel.ipae.proyectofinal.data.Trabajador
 import zegel.ipae.proyectofinal.model.InteractorGestionTrabajador
 

@@ -246,27 +246,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnConsulta"
-        style="@style/Widget.MaterialComponents.Button.Icon"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/green_light"
-        android:elevation="10dp"
-        android:padding="10dp"
-        android:text="@string/str_consultar"
-        android:textColor="?attr/colorOnSecondary"
-        android:textSize="20sp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
-
-    <Button
         android:id="@+id/btnTrabajador"
         style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="320dp"
@@ -285,6 +264,6 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83" />
+        app:layout_constraintVertical_bias="0.8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

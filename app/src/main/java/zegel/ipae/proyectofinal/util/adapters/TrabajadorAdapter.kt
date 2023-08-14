@@ -4,33 +4,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-<<<<<<< HEAD
 import androidx.appcompat.widget.AppCompatImageButton
-=======
->>>>>>> 40a33a6bb10fc7ff4d5c8f6fc7763885ba35a053
 import androidx.recyclerview.widget.RecyclerView
 import zegel.ipae.proyectofinal.R
 import zegel.ipae.proyectofinal.data.Trabajador
 
 class TrabajadorAdapter: RecyclerView.Adapter<TrabajadorAdapter.TrabajadorViewHolder>() {
-<<<<<<< HEAD
 
     private val trabajadores : MutableList<Trabajador> = mutableListOf()
 
     fun setTrabajadores(trabajadores: List<Trabajador>) {
-=======
-    private val trabajadores : MutableList<Trabajador> = mutableListOf()
-    fun actualizarTrabajadores(trabajadores: List<Trabajador>) {
->>>>>>> 40a33a6bb10fc7ff4d5c8f6fc7763885ba35a053
         this.trabajadores.clear()
         this.trabajadores.addAll(trabajadores)
         notifyDataSetChanged()
     }
 
-<<<<<<< HEAD
-=======
-    //COMIENZO DE TRABAJADORVIEWHOLDER
->>>>>>> 40a33a6bb10fc7ff4d5c8f6fc7763885ba35a053
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -40,13 +28,8 @@ class TrabajadorAdapter: RecyclerView.Adapter<TrabajadorAdapter.TrabajadorViewHo
     }
 
     override fun onBindViewHolder(holder: TrabajadorAdapter.TrabajadorViewHolder, position: Int) {
-<<<<<<< HEAD
         val trabajador = trabajadores[position]
         holder.bind(trabajador)
-=======
-        val trabajadores = trabajadores[position]
-        holder.bind(trabajadores)
->>>>>>> 40a33a6bb10fc7ff4d5c8f6fc7763885ba35a053
     }
 
     override fun getItemId(position: Int): Long {
@@ -55,14 +38,13 @@ class TrabajadorAdapter: RecyclerView.Adapter<TrabajadorAdapter.TrabajadorViewHo
 
     override fun getItemCount(): Int = trabajadores.size
 
-<<<<<<< HEAD
     var onEditButtonClickListener: ((Trabajador) -> Unit)? = null
 
     inner class TrabajadorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val editButton: AppCompatImageButton = itemView.findViewById(R.id.btnEdit)
         fun bind(user: Trabajador) {
             val nombreCompleto = "${user.nombre} ${user.apellido}"
-            itemView.findViewById<TextView>(R.id.txt_Name).text = nombreCompleto
+            itemView.findViewById<TextView>(R.id.txt_nombre).text = nombreCompleto
             itemView.findViewById<TextView>(R.id.txt_email).text = user.correo
             itemView.findViewById<TextView>(R.id.txt_number).text = user.dni
             itemView.findViewById<TextView>(R.id.txt_tel).text = user.tel
@@ -72,18 +54,6 @@ class TrabajadorAdapter: RecyclerView.Adapter<TrabajadorAdapter.TrabajadorViewHo
             editButton.setOnClickListener {
                 onEditButtonClickListener?.invoke(user)
             }
-=======
-    inner class TrabajadorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(trabajador: Trabajador) {
-            itemView.findViewById<TextView>(R.id.txt_dni).text = trabajador.dni
-            itemView.findViewById<TextView>(R.id.txt_tel).text = trabajador.tel
-            itemView.findViewById<TextView>(R.id.txt_rol).text = trabajador.rol
-            itemView.findViewById<TextView>(R.id.txt_nombre).text = trabajador.nombre
-            itemView.findViewById<TextView>(R.id.txt_apellido).text = trabajador.apellido
-            itemView.findViewById<TextView>(R.id.txt_correo).text = trabajador.correo
-            itemView.findViewById<TextView>(R.id.txt_uid).text = trabajador.uid
-            // Bind other user data here
->>>>>>> 40a33a6bb10fc7ff4d5c8f6fc7763885ba35a053
         }
     }
 }

@@ -13,26 +13,19 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseUser
 import zegel.ipae.proyectofinal.R
 import zegel.ipae.proyectofinal.contract.ContratoRegistroCliente
-import zegel.ipae.proyectofinal.contract.ContratoVerificarDni
 import zegel.ipae.proyectofinal.model.InteractorRegistroWork
-import zegel.ipae.proyectofinal.model.InteractorVerificarDni
 import zegel.ipae.proyectofinal.presenter.PresenterRegistroWork
-import zegel.ipae.proyectofinal.presenter.PresenterVerificarDni
 import zegel.ipae.proyectofinal.util.validation.Validaciones
-import zegel.ipae.proyectofinal.view.login.LoginActivity
-import zegel.ipae.proyectofinal.view.menuAdmin.MenuAdminActivity
 
-class AddTrabjadorActivity : AppCompatActivity(), View.OnClickListener, ContratoRegistroCliente.ViewRegistroTrabajador, ContratoRegistroCliente.CompleteListenerTrabajador, ContratoVerificarDni.View {
+class AddTrabjadorActivity : AppCompatActivity(), View.OnClickListener, ContratoRegistroCliente.ViewRegistroTrabajador, ContratoRegistroCliente.CompleteListenerTrabajador {
 
     private lateinit var presenter: PresenterRegistroWork
-    private lateinit var presenterDni: PresenterVerificarDni
     private lateinit var input: TextInputEditText
     private lateinit var input2: TextInputEditText
     private lateinit var input3: TextInputEditText
     private lateinit var input4: TextInputEditText
     private lateinit var input5: TextInputEditText
     private lateinit var input6: TextInputEditText
-    private lateinit var button: Button
     private lateinit var button2: Button
     private lateinit var dialog: ProgressDialog
 
@@ -53,14 +46,12 @@ class AddTrabjadorActivity : AppCompatActivity(), View.OnClickListener, Contrato
         input4 = findViewById(R.id.TextInputCorreo)
         input5 = findViewById(R.id.TextInputPassword)
         input6 = findViewById(R.id.TextInputTelefono)
-        button = findViewById(R.id.btnConsulta)
         button2 = findViewById(R.id.btnTrabajador)
 
-        button.setOnClickListener(this)
         button2.setOnClickListener(this)
 
         presenter = PresenterRegistroWork(this, InteractorRegistroWork(this))
-        presenterDni = PresenterVerificarDni(this, InteractorVerificarDni())
+
         dialog = ProgressDialog(this)
         dialog.setMessage("Registrando trabajador, espere por favor ...")
     }
@@ -75,13 +66,6 @@ class AddTrabjadorActivity : AppCompatActivity(), View.OnClickListener, Contrato
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.btnConsulta -> {
-                val userDni = input.text.toString().trim()
-                if (!Validaciones.isValidDni(userDni)) {
-                    input.error = "DNI inválido"
-                }
-                presenterDni.verifyDni(userDni)
-            }
             R.id.btnTrabajador -> {
                 val userDni = input.text.toString().trim()
                 val userName = input2.text.toString().trim()
@@ -141,14 +125,5 @@ class AddTrabjadorActivity : AppCompatActivity(), View.OnClickListener, Contrato
     private fun navigateToWork() {
         startActivity(Intent(this, GestionTrabajadorActivity::class.java))
         finish()
-    }
-
-    override fun showVerificationResult(name: String, lastName: String) {
-        input2.text = Editable.Factory.getInstance().newEditable(name)
-        input3.text = Editable.Factory.getInstance().newEditable(lastName)
-    }
-
-    override fun showVerificationError(error: String) {
-        Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
     }
 }
