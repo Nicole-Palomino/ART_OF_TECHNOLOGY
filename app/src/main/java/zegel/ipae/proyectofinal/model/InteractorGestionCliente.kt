@@ -12,7 +12,6 @@ class InteractorGestionCliente @Inject constructor(): ContratoGestionCliente.Int
         val clientes = mutableListOf<Cliente>()
 
         firestore.collection("usuarios")
-            .whereEqualTo("rol", "cliente")
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {

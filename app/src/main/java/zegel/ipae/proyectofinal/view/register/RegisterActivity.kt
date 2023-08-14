@@ -4,13 +4,10 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseUser
 import dagger.hilt.android.AndroidEntryPoint
@@ -105,7 +102,12 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener, ContratoRegi
 
     override fun onFailure(message: String) {
         dialog.dismiss()
-        Toast.makeText(this, "Error: $message", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun navigateToLogin() {
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 
     override fun onRegistrationSuccess(firebaseUser: FirebaseUser) {
@@ -114,10 +116,5 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener, ContratoRegi
 
     override fun onRegistrationFailure(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    private fun navigateToLogin() {
-        startActivity(Intent(this, LoginActivity::class.java))
-        finish()
     }
 }

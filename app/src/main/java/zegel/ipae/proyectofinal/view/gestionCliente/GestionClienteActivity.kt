@@ -18,7 +18,9 @@ import zegel.ipae.proyectofinal.view.menuAdmin.MenuAdminActivity
 class GestionClienteActivity : AppCompatActivity(), ContratoGestionCliente.View{
 
     private lateinit var presenter: PresenterGestionCliente
+
     private val clienteAdapter = ClienteAdapter()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gestion_cliente)
@@ -31,6 +33,8 @@ class GestionClienteActivity : AppCompatActivity(), ContratoGestionCliente.View{
         val recyclerView: RecyclerView = findViewById(R.id.recyclerViewCliente)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = clienteAdapter
+
+        presenter.obtenerClientes()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
