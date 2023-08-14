@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:background="@drawable/background"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".view.gestionTrabajador.GestionTrabajadorActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background3"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".view.gestionTrabajador.GestionTrabajadorActivity">
 
     <RelativeLayout
         android:id="@+id/navegacion"
+<<<<<<< HEAD
         android:layout_width="409dp"
         android:layout_height="61dp"
         android:layout_marginBottom="628dp"
+=======
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="636dp"
+>>>>>>> 14684140d01f16a609f8b59c7798d13ff31e5b19
         android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtBuscarTrabajador"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="283dp"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="10dp"
             android:elevation="10dp"
             android:hint="@string/str_buscar"
             android:textColorHint="@color/black_light"
@@ -36,12 +45,6 @@ tools:context=".view.gestionTrabajador.GestionTrabajadorActivity">
             app:boxStrokeErrorColor="@color/red"
             app:endIconMode="clear_text"
             app:endIconTint="@color/black_light"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.273"
             app:startIconDrawable="@drawable/icon_search"
             app:startIconTint="@color/black_light">
 
@@ -49,7 +52,7 @@ tools:context=".view.gestionTrabajador.GestionTrabajadorActivity">
                 android:id="@+id/TextInputBuscarTrabajador"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text|textEmailAddress"
+                android:inputType="text"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/green_light"
                 android:textColorHint="@color/grey"
@@ -58,10 +61,10 @@ tools:context=".view.gestionTrabajador.GestionTrabajadorActivity">
 
     </RelativeLayout>
 
-    <ScrollView
-        android:id="@+id/scrollTrabajadores"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/listarClientes"
         android:layout_width="0dp"
-        android:layout_height="590dp"
+        android:layout_height="580dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
@@ -74,24 +77,28 @@ tools:context=".view.gestionTrabajador.GestionTrabajadorActivity">
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/listarUsuarios"
+        <!-- Contenido del ConstraintLayout -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTrabajador"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/trabajador_item">
 
-            <!-- Contenido del ConstraintLayout -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewTrabajador"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/trabajador_item">
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </androidx.recyclerview.widget.RecyclerView>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/red"
+        android:src="@drawable/icon_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

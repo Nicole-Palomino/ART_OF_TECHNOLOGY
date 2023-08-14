@@ -17,14 +17,24 @@
         android:theme="@style/Theme.ProyectoFinal"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".view.gestionProductos.EditarProductoActivity"
             android:exported="false" />
         <activity
             android:name=".view.gestionTrabajador.EditarTrabajadorActivity"
             android:exported="false" />
         <activity
-            android:name=".view.gestionTrabajador.GestionTrabajadorActivity"
+=======
+            android:name=".view.gestionTrabajador.AddTrabjadorActivity"
             android:exported="false" />
+        <activity
+            android:name=".view.gestionTrabajador.EditarTrabajadorActivity"
+            android:exported="false" />
+        <activity
+>>>>>>> 14684140d01f16a609f8b59c7798d13ff31e5b19
+            android:name=".view.gestionTrabajador.GestionTrabajadorActivity"
+            android:exported="false"
+            android:label="@string/title_usuarios" />
         <activity
             android:name=".view.perfil.PerfilTrabajadorActivity"
             android:exported="false" />
@@ -44,7 +54,11 @@
             android:label="@string/title_product" />
         <activity
             android:name=".view.gestionCliente.GestionClienteActivity"
+<<<<<<< HEAD
             android:exported="true"
+=======
+            android:exported="false"
+>>>>>>> 14684140d01f16a609f8b59c7798d13ff31e5b19
             android:label="@string/title_usuarios" />
         <activity
             android:name=".view.menuAdmin.MenuAdminActivity"

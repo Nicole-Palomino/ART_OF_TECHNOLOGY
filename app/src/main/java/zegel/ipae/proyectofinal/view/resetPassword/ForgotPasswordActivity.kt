@@ -69,8 +69,7 @@ class ForgotPasswordActivity : AppCompatActivity(), View.OnClickListener, Contra
     }
 
     override fun showEmailSentMessage() {
-        val successMessage = "Se ha enviado un correo de restablecimiento a tu dirección de correo."
-        Toast.makeText(this, successMessage, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Se ha enviado un correo de restablecimiento a tu dirección de correo", Toast.LENGTH_LONG).show()
         navigateToLogin()
     }
 

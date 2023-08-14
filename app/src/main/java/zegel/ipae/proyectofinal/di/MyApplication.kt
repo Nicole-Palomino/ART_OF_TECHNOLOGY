@@ -1,7 +1,10 @@
 package zegel.ipae.proyectofinal.di
 
 import android.app.Application
+import com.google.firebase.FirebaseApp
+import com.google.firebase.FirebaseOptions
 import dagger.hilt.android.HiltAndroidApp
+import java.io.FileInputStream
 
 @HiltAndroidApp
 class MyApplication: Application() {

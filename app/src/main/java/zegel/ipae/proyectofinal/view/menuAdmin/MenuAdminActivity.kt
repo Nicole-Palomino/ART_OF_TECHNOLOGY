@@ -7,23 +7,21 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import zegel.ipae.proyectofinal.R
 import zegel.ipae.proyectofinal.contract.ContratoGetData
-import zegel.ipae.proyectofinal.data.Cliente
-import zegel.ipae.proyectofinal.model.InteractorGetData
-import zegel.ipae.proyectofinal.presenter.PresenterGetData
+import zegel.ipae.proyectofinal.data.Trabajador
+import zegel.ipae.proyectofinal.model.InteractorGetDataWork
+import zegel.ipae.proyectofinal.presenter.PresenterGetDataWork
 import zegel.ipae.proyectofinal.view.gestionCliente.GestionClienteActivity
+import zegel.ipae.proyectofinal.view.gestionTrabajador.GestionTrabajadorActivity
 import zegel.ipae.proyectofinal.view.login.LoginActivity
 import zegel.ipae.proyectofinal.view.perfil.PerfilActivity
 import zegel.ipae.proyectofinal.view.perfil.PerfilTrabajadorActivity
 
-class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoGetData.View {
+class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoGetData.ViewTrabajador {
 
-    private lateinit var presenter: PresenterGetData
+    private lateinit var presenter: PresenterGetDataWork
     private lateinit var textView: TextView
     private lateinit var button: CardView
     private lateinit var button2: CardView
@@ -55,7 +53,7 @@ class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoGet
         button4.setOnClickListener(this)
         button5.setOnClickListener(this)
 
-        presenter = PresenterGetData(this, InteractorGetData())
+        presenter = PresenterGetDataWork(this, InteractorGetDataWork())
         presenter.loadData()
     }
 
@@ -94,7 +92,7 @@ class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoGet
     }
 
     private fun redirectToTrabajadores() {
-        startActivity(Intent(this, PerfilActivity::class.java))
+        startActivity(Intent(this, GestionTrabajadorActivity::class.java))
     }
 
     private fun redirectToProduct() {
@@ -110,8 +108,11 @@ class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoGet
     }
 
     // mostrar datos
-    override fun showUserData(userData: Cliente) {
-        textView.text = userData.username
+    override fun showUserData(userData: Trabajador) {
+        val name = userData.nombre
+        val last = userData.apellido
+        val fullName = "$name $last"
+        textView.text = fullName
     }
 
     override fun showErrorMessage(message: String) {

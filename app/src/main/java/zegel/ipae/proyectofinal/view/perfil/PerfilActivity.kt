@@ -21,9 +21,7 @@ import zegel.ipae.proyectofinal.model.InteractorForgotPassword
 import zegel.ipae.proyectofinal.model.InteractorGetData
 import zegel.ipae.proyectofinal.presenter.PresenterForgotPassword
 import zegel.ipae.proyectofinal.presenter.PresenterGetData
-import zegel.ipae.proyectofinal.util.validation.Validaciones
 import zegel.ipae.proyectofinal.view.login.LoginActivity
-import zegel.ipae.proyectofinal.view.menuAdmin.MenuAdminActivity
 import zegel.ipae.proyectofinal.view.menuCliente.MenuClienteActivity
 
 class PerfilActivity : AppCompatActivity(), View.OnClickListener, ContratoGetData.View, ContratoForgotPassword.View {

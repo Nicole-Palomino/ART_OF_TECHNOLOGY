@@ -8,7 +8,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import zegel.ipae.proyectofinal.contract.ContratoLoginCliente
 import zegel.ipae.proyectofinal.view.menuAdmin.MenuAdminActivity
 import zegel.ipae.proyectofinal.view.menuCliente.MenuClienteActivity
-import zegel.ipae.proyectofinal.view.register.RegisterActivity
 import javax.inject.Inject
 
 class InteractorLoginCliente @Inject constructor(private val complete: ContratoLoginCliente.CompleteLoginCliente): ContratoLoginCliente.InteractorLoginCliente {
