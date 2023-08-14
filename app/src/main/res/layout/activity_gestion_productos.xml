@@ -10,7 +10,7 @@
         android:id="@+id/navegacion"
         android:layout_width="408dp"
         android:layout_height="68dp"
-        android:layout_marginBottom="496dp"
+        android:layout_marginBottom="624dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
@@ -91,7 +91,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- Contenido del ConstraintLayout -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewProducto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/producto_item">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
