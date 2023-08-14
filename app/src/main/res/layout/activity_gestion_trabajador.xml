@@ -11,7 +11,7 @@ tools:context=".view.gestionTrabajador.GestionTrabajadorActivity">
         android:id="@+id/navegacion"
         android:layout_width="408dp"
         android:layout_height="68dp"
-        android:layout_marginBottom="760dp"
+        android:layout_marginBottom="644dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,40 +58,40 @@ tools:context=".view.gestionTrabajador.GestionTrabajadorActivity">
 
     </RelativeLayout>
 
-<ScrollView
-    android:id="@+id/scrollTrabajadores"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:layout_marginStart="10dp"
-    android:layout_marginTop="30dp"
-    android:layout_marginEnd="10dp"
-    android:layout_marginBottom="30dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/navegacion"
-    app:layout_constraintVertical_bias="0.449"
-    tools:ignore="MissingConstraints">
+    <ScrollView
+        android:id="@+id/scrollTrabajadores"
+        android:layout_width="0dp"
+        android:layout_height="590dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navegacion"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/listarUsuarios"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <!-- Contenido del ConstraintLayout -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewTrabajador"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/listarUsuarios"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/trabajador_item">
+            android:layout_height="wrap_content">
 
-        </androidx.recyclerview.widget.RecyclerView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <!-- Contenido del ConstraintLayout -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTrabajador"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/trabajador_item">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,11 +11,12 @@
         android:id="@+id/navegacion"
         android:layout_width="408dp"
         android:layout_height="68dp"
-        android:layout_marginBottom="760dp"
+        android:layout_marginBottom="636dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
 
@@ -62,17 +63,17 @@
     <ScrollView
         android:id="@+id/scrollClientes"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="580dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navegacion"
-        app:layout_constraintVertical_bias="0.449"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
