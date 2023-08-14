@@ -10,7 +10,8 @@ class PresenterGestionTrabajador @Inject constructor(
 
     override fun obtenerTrabajadores() {
         interactor.obtenerTrabajadores { trabajadores ->
-            view.showTrabajadores(trabajadores)
+            val usuariosTrabajadores = trabajadores.filter { it.rol == "trabajador" }
+            view.showTrabajadores(usuariosTrabajadores)
         }
     }
 

@@ -9,10 +9,10 @@ tools:context=".view.gestionTrabajador.GestionTrabajadorActivity">
 
     <RelativeLayout
         android:id="@+id/navegacion"
-        android:layout_width="408dp"
-        android:layout_height="68dp"
-        android:layout_marginBottom="644dp"
-        android:gravity="center_horizontal"
+        android:layout_width="409dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="628dp"
+        android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
@@ -63,15 +63,15 @@ tools:context=".view.gestionTrabajador.GestionTrabajadorActivity">
         android:layout_width="0dp"
         android:layout_height="590dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navegacion"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout

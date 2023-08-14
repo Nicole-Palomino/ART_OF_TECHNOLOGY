@@ -10,13 +10,13 @@
     <TextView
         android:id="@+id/txtTitulo"
         android:layout_width="314dp"
-        android:layout_height="74dp"
+        android:layout_height="90dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:fontFamily="sans-serif-smallcaps"
         android:gravity="center_vertical"
         android:text="EDITAR TRABAJADOR"
@@ -25,29 +25,47 @@
         tools:ignore="RtlCompat" />
 
     <EditText
-        android:id="@+id/editTextContrasena"
+        android:id="@+id/editTextTel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextCorreo"
-        android:layout_marginTop="36dp"
-        android:hint="Contraseña"
-        android:inputType="textPassword" />
+        android:layout_below="@+id/editTextDni"
+        android:layout_marginTop="27dp"
+        android:hint="Teléfono"
+        android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/editTextRol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="223dp"
-        android:hint="Username"
-        android:inputType="text" />
+        android:layout_below="@+id/editTextTel"
+        android:layout_marginTop="26dp"
+        android:hint="Rol"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextRol"
+        android:layout_marginTop="26dp"
+        android:hint="Nombres"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextNombre"
+        android:layout_marginTop="26dp"
+        android:hint="Apellidos"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/editTextCorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextUsername"
-        android:layout_marginTop="36dp"
+        android:layout_below="@+id/editTextApellido"
+        android:layout_marginTop="26dp"
         android:hint="Correo"
         android:inputType="textEmailAddress" />
 
@@ -55,28 +73,19 @@
         android:id="@+id/editTextDni"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextUsername"
-        android:layout_marginTop="36dp"
+        android:layout_below="@+id/txtTitulo"
+        android:layout_marginTop="26dp"
         android:hint="DNI"
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/editTextTel"
+        android:id="@+id/editTextContrasena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextUsername"
-        android:layout_marginTop="36dp"
-        android:hint="Correo"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/editTextRol"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextUsername"
-        android:layout_marginTop="36dp"
-        android:hint="Rol"
-        android:inputType="textEmailAddress" />
+        android:layout_below="@+id/editTextCorreo"
+        android:layout_marginTop="26dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnGuardar"
@@ -87,7 +96,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="96dp"
         android:layout_marginEnd="96dp"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="50dp"
         android:text="GUARDAR" />
 
 </RelativeLayout>
