@@ -24,6 +24,7 @@ import zegel.ipae.proyectofinal.presenter.PresenterGetData
 import zegel.ipae.proyectofinal.util.validation.Validaciones
 import zegel.ipae.proyectofinal.view.login.LoginActivity
 import zegel.ipae.proyectofinal.view.menuAdmin.MenuAdminActivity
+import zegel.ipae.proyectofinal.view.menuCliente.MenuClienteActivity
 
 class PerfilActivity : AppCompatActivity(), View.OnClickListener, ContratoGetData.View, ContratoForgotPassword.View {
 
@@ -80,7 +81,7 @@ class PerfilActivity : AppCompatActivity(), View.OnClickListener, ContratoGetDat
     }
 
     private fun navigateToMenu() {
-        startActivity(Intent(this, MenuAdminActivity::class.java))
+        startActivity(Intent(this, MenuClienteActivity::class.java))
     }
 
     override fun onClick(v: View?) {

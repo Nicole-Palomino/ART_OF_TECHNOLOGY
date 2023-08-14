@@ -1,6 +1,7 @@
 package zegel.ipae.proyectofinal.contract
 
 import zegel.ipae.proyectofinal.data.Cliente
+import zegel.ipae.proyectofinal.data.Trabajador
 
 interface ContratoGetData {
     interface View {
@@ -17,7 +18,7 @@ interface ContratoGetData {
     }
 
     interface ViewTrabajador {
-        fun showUserData(userData: Cliente)
+        fun showUserData(userData: Trabajador)
         fun showErrorMessage(message: String)
     }
 
@@ -26,6 +27,6 @@ interface ContratoGetData {
     }
 
     interface InteractorTrabajador {
-        fun getUserData(callback: (Cliente?, String?, String?, String?) -> Unit)
+        fun getUserData(callback: (Trabajador?, String?) -> Unit)
     }
 }

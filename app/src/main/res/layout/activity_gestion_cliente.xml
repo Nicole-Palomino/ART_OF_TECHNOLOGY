@@ -4,36 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".view.gestionCliente.GestionClienteActivity">
 
     <RelativeLayout
         android:id="@+id/navegacion"
         android:layout_width="408dp"
         android:layout_height="68dp"
-        android:layout_marginBottom="516dp"
+        android:layout_marginBottom="760dp"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp">
-
-        <ImageButton
-            android:id="@+id/btnAgregar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="326dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="7dp"
-            android:background="@drawable/customborder"
-            android:contentDescription="agregar"
-            app:srcCompat="@drawable/agregar_usuario" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtBuscarTrab"
+            android:id="@+id/txtBuscarCliente"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="283dp"
             android:layout_height="wrap_content"
@@ -60,7 +47,7 @@
             app:startIconTint="@color/black_light">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/TextInputBuscarTrab"
+                android:id="@+id/TextInputBuscarCliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text|textEmailAddress"
@@ -73,24 +60,36 @@
     </RelativeLayout>
 
     <ScrollView
-        android:id="@+id/scrollUsuarios"
-        android:layout_width="320dp"
-        android:layout_height="400dp"
+        android:id="@+id/scrollClientes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.576"
+        app:layout_constraintTop_toBottomOf="@+id/navegacion"
+        app:layout_constraintVertical_bias="0.449"
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/listarUsuarios"
+            android:id="@+id/listarClientes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <!-- Contenido del ConstraintLayout -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCliente"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/cliente_item">
 
+            </androidx.recyclerview.widget.RecyclerView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
