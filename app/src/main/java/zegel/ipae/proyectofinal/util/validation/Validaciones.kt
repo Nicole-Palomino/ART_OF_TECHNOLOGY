@@ -16,4 +16,16 @@ object Validaciones {
     fun isValidConfirm(pass: String, confirm: String): Boolean {
         return confirm.isNotBlank() && pass == confirm
     }
+
+    fun isValidDni(dni: String): Boolean {
+        return dni.isNotBlank() && dni.length == 8
+    }
+
+    fun isValidLastname(last: String): Boolean {
+        return last.isNotBlank()
+    }
+
+    fun isValidTel(tel: String): Boolean {
+        return tel.isNotBlank() && tel.length == 9
+    }
 }

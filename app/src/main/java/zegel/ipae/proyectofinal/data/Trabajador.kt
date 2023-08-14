@@ -8,7 +8,7 @@ data class Trabajador (
     val nombre: String,
     val apellido: String,
     val correo: String,
-    val contrasena: String
+    val estado: String
 ) {
     constructor() : this("", "", "", "", "", "", "", "")
 }

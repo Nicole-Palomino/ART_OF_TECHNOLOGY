@@ -3,27 +3,17 @@ package zegel.ipae.proyectofinal.contract
 import zegel.ipae.proyectofinal.data.Trabajador
 
 interface ContratoGestionTrabajador {
-    interface View {
+    interface ViewList {
         fun showTrabajadores(trabajadores: List<Trabajador>)
-        fun showEditSuccess()
-        fun showEditFailure()
-        fun showDeleteSuccess()
-        fun showDeleteFailure()
     }
 
-    interface Presenter {
+    interface PresenterList {
         fun obtenerTrabajadores()
-        fun editarTrabajadores(trabajador: Trabajador)
-        fun eliminarTrabajadores(trabajador: Trabajador)
+        fun editarTrabajador(trabajador: Trabajador)
     }
 
-    interface Interactor {
+    interface InteractorList {
         fun obtenerTrabajadores(callback: (List<Trabajador>) -> Unit)
-        fun editarTrabajadores(trabajador: Trabajador, callback: (Boolean) -> Unit)
-        fun eliminarTrabajadores(trabajador: Trabajador, callback: (Boolean) -> Unit)
-    }
-
-    interface ViewEditTrabajador {
-        fun showEditTrabajador()
+        fun actualizarTrabajador(trabajador: Trabajador)
     }
 }

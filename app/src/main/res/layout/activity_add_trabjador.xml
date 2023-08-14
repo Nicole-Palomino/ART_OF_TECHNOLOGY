@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background3"
     android:orientation="vertical"
-    tools:context=".view.gestionTrabajador.EditarTrabajadorActivity">
+    android:background="@drawable/background3"
+    tools:context=".view.gestionTrabajador.AddTrabjadorActivity">
 
     <TextView
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/title_edit_trabajador"
+        android:contentDescription="@string/title_trabajador"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/title_edit_trabajador"
+        android:text="@string/title_trabajador"
         android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.061" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtDni2"
+        android:id="@+id/txtDni"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
         app:startIconTint="@color/black_light">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TextInputDni2"
+            android:id="@+id/TextInputDni"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
@@ -61,7 +61,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtUsuario2"
+        android:id="@+id/txtUsuario"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
         app:startIconTint="@color/black_light">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TextInputUsuario2"
+            android:id="@+id/TextInputUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -98,7 +98,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtLastName2"
+        android:id="@+id/txtLastName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
         app:startIconTint="@color/black_light">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TextInputLastName2"
+            android:id="@+id/TextInputLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -135,7 +135,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtCorreo2"
+        android:id="@+id/txtCorreo"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
         app:startIconTint="@color/black_light">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TextInputCorreo2"
+            android:id="@+id/TextInputCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -172,11 +172,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtEstado"
+        android:id="@+id/txtPassword"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:hint="@string/str_estado"
+        android:hint="@string/input_pass"
         android:textColorHint="@color/black_light"
         android:elevation="10dp"
         app:boxBackgroundMode="outline"
@@ -186,7 +186,7 @@
         app:boxCornerRadiusTopStart="10dp"
         app:boxStrokeColor="@color/green_light"
         app:boxStrokeErrorColor="@color/red"
-        app:endIconMode="clear_text"
+        app:endIconMode="password_toggle"
         app:endIconTint="@color/black_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -194,14 +194,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.55"
-        app:startIconDrawable="@drawable/baseline_numbers_24"
+        app:startIconDrawable="@drawable/icon_lock"
         app:startIconTint="@color/black_light">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TextInputEstado"
+            android:id="@+id/TextInputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:inputType="textPassword"
             android:textColor="@color/black"
             android:textColorHighlight="@color/green_light"
             android:textColorHint="@color/grey"
@@ -209,7 +209,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtTelefono2"
+        android:id="@+id/txtTelefono"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
@@ -235,7 +235,7 @@
         app:startIconTint="@color/black_light">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TextInputTelefono2"
+            android:id="@+id/TextInputTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone|number"
@@ -246,6 +246,27 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/btnConsulta"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green_light"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:text="@string/str_consultar"
+        android:textColor="?attr/colorOnSecondary"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <Button
         android:id="@+id/btnTrabajador"
         style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="320dp"
@@ -253,7 +274,7 @@
         android:backgroundTint="@color/green_light"
         android:elevation="10dp"
         android:padding="10dp"
-        android:text="@string/str_edit"
+        android:text="@string/btn_account"
         android:textColor="?attr/colorOnSecondary"
         android:textSize="20sp"
         android:fontFamily="sans-serif-smallcaps"
@@ -265,4 +286,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.83" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

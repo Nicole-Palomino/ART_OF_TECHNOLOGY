@@ -41,6 +41,7 @@ class PerfilTrabajadorActivity : AppCompatActivity(), View.OnClickListener, Cont
 
         // aparezca el icono de regresar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         initViews()
     }
 

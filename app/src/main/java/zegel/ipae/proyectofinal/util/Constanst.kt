@@ -3,6 +3,7 @@ package zegel.ipae.proyectofinal.util
 object Constantes {
     val DEFAULT_ROL_CLIENTE = "cliente"
     val DEFAULT_ROL_TRABAJADOR = "trabajador"
+    val DEFAULT_ESTADO_TRABAJADOR = "1"
 
     const val SHARED_PREFS_NAME = "session_prefs"
     const val RC_GOOGLE_SIGN_IN = 123

@@ -31,4 +31,38 @@ interface ContratoRegistroCliente {
         fun onSuccess(firebaseUser: FirebaseUser)
         fun onFailure(message: String)
     }
+
+    interface ViewRegistroTrabajador {
+        fun onRegistrationSuccess(firebaseUser: FirebaseUser)
+        fun onRegistrationFailure(message: String)
+    }
+
+    interface PresenterRegistroTrabajador {
+        fun registerWithEmailAndPassword(
+            activity: Activity,
+            correo: String,
+            contrasena: String,
+            dni: String,
+            tel: String,
+            nombre: String,
+            apellido: String
+        )
+    }
+
+    interface InteractorTrabajador {
+        fun performSigUp(
+            activity: Activity,
+            correo: String,
+            contrasena: String,
+            dni: String,
+            tel: String,
+            nombre: String,
+            apellido: String
+        )
+    }
+
+    interface CompleteListenerTrabajador {
+        fun onSuccess(firebaseUser: FirebaseUser)
+        fun onFailure(message: String)
+    }
 }

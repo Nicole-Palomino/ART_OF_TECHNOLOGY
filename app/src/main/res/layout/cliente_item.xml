@@ -10,9 +10,27 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/button2"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:background="@color/white2"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icon_account"
+                android:contentDescription="@string/cancel" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -30,13 +48,6 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txt_uid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="uid"
-                android:textSize="14sp" />
-
-            <TextView
                 android:id="@+id/txt_correo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,24 +62,6 @@
                 android:textSize="14sp" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="end"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="59dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/delete" />
-
-        </LinearLayout>
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
