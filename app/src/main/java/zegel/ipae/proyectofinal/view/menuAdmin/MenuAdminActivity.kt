@@ -14,6 +14,7 @@ import zegel.ipae.proyectofinal.data.Trabajador
 import zegel.ipae.proyectofinal.model.InteractorGetDataWork
 import zegel.ipae.proyectofinal.presenter.PresenterGetDataWork
 import zegel.ipae.proyectofinal.view.gestionCliente.GestionClienteActivity
+import zegel.ipae.proyectofinal.view.gestionProductos.GestionProductosActivity
 import zegel.ipae.proyectofinal.view.gestionTrabajador.GestionTrabajadorActivity
 import zegel.ipae.proyectofinal.view.login.LoginActivity
 import zegel.ipae.proyectofinal.view.perfil.PerfilActivity
@@ -96,7 +97,7 @@ class MenuAdminActivity : AppCompatActivity(), View.OnClickListener, ContratoGet
     }
 
     private fun redirectToProduct() {
-        startActivity(Intent(this, MenuAdminActivity::class.java))
+        startActivity(Intent(this, GestionProductosActivity::class.java))
     }
 
     private fun redirectToClient() {

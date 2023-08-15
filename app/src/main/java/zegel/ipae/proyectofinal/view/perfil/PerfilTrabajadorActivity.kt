@@ -31,9 +31,10 @@ class PerfilTrabajadorActivity : AppCompatActivity(), View.OnClickListener, Cont
     private lateinit var presenter: PresenterGetDataWork
     private lateinit var textView: TextView
     private lateinit var textView2: TextView
+    private lateinit var textView3: TextView
+    private lateinit var textView4: TextView
     private lateinit var button: Button
     private lateinit var button2: Button
-    private lateinit var dialog: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,8 +47,10 @@ class PerfilTrabajadorActivity : AppCompatActivity(), View.OnClickListener, Cont
     }
 
     private fun initViews() {
-        textView = findViewById(R.id.txtUserName)
-        textView2 = findViewById(R.id.txtUserEmail)
+        textView = findViewById(R.id.txtNombres)
+        textView2 = findViewById(R.id.txtLast)
+        textView3 = findViewById(R.id.txtUserEmail2)
+        textView4 = findViewById(R.id.txtDNI3)
         button = findViewById(R.id.btnClose)
 
         presenter = PresenterGetDataWork(this, InteractorGetDataWork())
@@ -89,7 +92,9 @@ class PerfilTrabajadorActivity : AppCompatActivity(), View.OnClickListener, Cont
 
     override fun showUserData(userData: Trabajador) {
         textView.text = userData.nombre
-        textView2.text = userData.correo
+        textView2.text = userData.apellido
+        textView3.text = userData.correo
+        textView4.text = userData.dni
     }
 
     override fun showErrorMessage(message: String) {

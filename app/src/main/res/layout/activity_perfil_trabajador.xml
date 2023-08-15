@@ -50,14 +50,14 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/input_username"
+            android:contentDescription="Nombres"
             android:fontFamily="sans-serif-smallcaps"
-            android:text="@string/input_username"
+            android:text="Nombres"
             android:textColor="@color/black"
             android:textSize="20sp"/>
 
         <TextView
-            android:id="@+id/txtUserName"
+            android:id="@+id/txtNombres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="@string/input_username"
@@ -69,7 +69,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout8"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -83,6 +82,38 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:contentDescription="Apellidos"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Apellidos"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtLast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/input_username"
+            android:fontFamily="sans-serif"
+            android:paddingStart="8dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/str_correo"
             android:fontFamily="sans-serif-smallcaps"
             android:text="@string/str_correo"
@@ -90,10 +121,42 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/txtUserEmail"
+            android:id="@+id/txtUserEmail2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/input_username"
+            android:contentDescription="Correo"
+            android:fontFamily="sans-serif"
+            android:paddingStart="8dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="DNI"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="DNI"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtDNI3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="DNI"
             android:fontFamily="sans-serif"
             android:paddingStart="8dp"
             android:text=""
