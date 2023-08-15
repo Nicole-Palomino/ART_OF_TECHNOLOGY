@@ -25,7 +25,7 @@
             android:exported="false"
             android:label="@string/str_edit_work"/>
         <activity
-            android:name=".view.gestionProductos.EditarProductoActivity"
+            android:name=".view.gestionCliente.gestionProductos.EditarProductoActivity"
             android:exported="false" />
         <activity
             android:name=".view.gestionTrabajador.GestionTrabajadorActivity"
@@ -46,7 +46,7 @@
             android:name=".view.resetPassword.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".view.gestionProductos.GestionProductosActivity"
+            android:name=".view.gestionCliente.gestionProductos.GestionProductosActivity"
             android:exported="false"
             android:label="@string/title_product" />
         <activity
@@ -71,6 +71,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.escanearCodigo.EscanearCodigoActivity"
+            android:exported="true"
+            android:screenOrientation="sensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="portrait"
+            tools:replace="screenOrientation" />
     </application>
 
 </manifest>

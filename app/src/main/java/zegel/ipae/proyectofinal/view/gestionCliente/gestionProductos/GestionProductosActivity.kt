@@ -1,4 +1,4 @@
-package zegel.ipae.proyectofinal.view.gestionProductos
+package zegel.ipae.proyectofinal.view.gestionCliente.gestionProductos
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
